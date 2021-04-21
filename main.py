@@ -5,7 +5,7 @@ class SpriteKind:
 def on_overlap_tile(sprite, location):
     info.change_score_by(1)
     music.ba_ding.play()
-    game.splash("whatever ig eso")
+    game.splash( "historia del ghost whatever blah blah blah")
     tiles.set_tile_at(tiles.get_tile_location(0, 0),
         assets.tile("""
             myTile0
@@ -51,6 +51,15 @@ controller.A.on_event(ControllerButtonEvent.PRESSED, on_a_pressed)
 def on_life_zero():
     game.over(False, effects.blizzard)
 info.on_life_zero(on_life_zero)
+
+def on_on_overlap(sprite, otherSprite):
+    sprite.destroy(effects.ashes, 500)
+    otherSprite.destroy(effects.ashes, 500)
+sprites.on_overlap(SpriteKind.projectile, SpriteKind.enemy, on_on_overlap)
+
+def on_on_overlap2(sprite, otherSprite):
+    pass
+sprites.on_overlap(SpriteKind.player, SpriteKind.enemy, on_on_overlap2)
 
 projectile: Sprite = None
 mySprite: Sprite = None
@@ -194,25 +203,28 @@ animation.run_image_animation(mySprite,
     True)
 
 def on_forever():
-    if mySprite.overlaps_with(scp2):
-        mySprite.say("Oh no!", 2000)
-        scp2.destroy(effects.ashes, 1000)
-        music.wawawawaa.play()
-        info.change_life_by(-1)
-forever(on_forever)
-
-def on_forever2():
-    if mySprite.overlaps_with(SCP4):
-        mySprite.say("Oh no!", 2000)
-        SCP4.destroy(effects.ashes, 1000)
-        music.wawawawaa.play()
-        info.change_life_by(-1)
-forever(on_forever2)
-
-def on_forever3():
     if mySprite.overlaps_with(SCP3):
         mySprite.say("Oh no!", 2000)
         SCP3.destroy(effects.ashes, 1000)
         music.wawawawaa.play()
         info.change_life_by(-1)
+        scene.camera_shake(4, 500)
+forever(on_forever)
+
+def on_forever2():
+    if mySprite.overlaps_with(scp2):
+        mySprite.say("Oh no!", 2000)
+        scp2.destroy(effects.ashes, 1000)
+        music.wawawawaa.play()
+        info.change_life_by(-1)
+        scene.camera_shake(4, 500)
+forever(on_forever2)
+
+def on_forever3():
+    if mySprite.overlaps_with(SCP4):
+        mySprite.say("Oh no!", 2000)
+        SCP4.destroy(effects.ashes, 1000)
+        music.wawawawaa.play()
+        info.change_life_by(-1)
+        scene.camera_shake(4, 500)
 forever(on_forever3)
