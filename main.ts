@@ -36,9 +36,7 @@ info.onLifeZero(function () {
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprite.destroy(effects.ashes, 500)
     otherSprite.destroy(effects.ashes, 500)
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-	
+    scene.cameraShake(3, 500)
 })
 let projectile: Sprite = null
 let mySprite: Sprite = null
@@ -180,7 +178,7 @@ forever(function () {
         SCP3.destroy(effects.ashes, 1000)
         music.wawawawaa.play()
         info.changeLifeBy(-1)
-        scene.cameraShake(4, 500)
+        scene.cameraShake(8, 500)
     }
 })
 forever(function () {
@@ -189,7 +187,7 @@ forever(function () {
         scp2.destroy(effects.ashes, 1000)
         music.wawawawaa.play()
         info.changeLifeBy(-1)
-        scene.cameraShake(4, 500)
+        scene.cameraShake(8, 500)
     }
 })
 forever(function () {
@@ -198,6 +196,6 @@ forever(function () {
         SCP4.destroy(effects.ashes, 1000)
         music.wawawawaa.play()
         info.changeLifeBy(-1)
-        scene.cameraShake(4, 500)
+        scene.cameraShake(8, 500)
     }
 })
