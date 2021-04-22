@@ -40,6 +40,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 })
 let projectile: Sprite = null
 let mySprite: Sprite = null
+game.splash("dan moment")
 mySprite = sprites.create(img`
     ........................
     ........................
