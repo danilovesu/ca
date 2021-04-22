@@ -5,6 +5,7 @@ namespace SpriteKind {
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonPinkDepressed, function (sprite, location) {
     game.over(true)
     effects.confetti.startScreenEffect()
+    game.splash("Ya sabes, la contaminacion acustica no es divertida", "Ayuda a la naturaliza a sanar! ")
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(img`
@@ -39,6 +40,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 let projectile: Sprite = null
 let mySprite: Sprite = null
 game.splash("Contaminacion acustica")
+game.splash("colecciona los 3 cofres", "para ganar el juego")
 mySprite = sprites.create(img`
     ........................
     ........................
@@ -281,7 +283,7 @@ forever(function () {
 forever(function () {
     if (mySprite.overlapsWith(chest1)) {
         chest1.destroy(effects.ashes, 1000)
-        game.splash("historia del ghost whatever blah blah blah")
+        game.splash("La contaminacion acustica ", "nos afecta a todos, flora y fauna")
         info.changeScoreBy(2)
         music.baDing.play()
     }
@@ -289,7 +291,7 @@ forever(function () {
 forever(function () {
     if (mySprite.overlapsWith(chest2)) {
         chest2.destroy(effects.ashes, 1000)
-        game.splash("historia del ghost whatever blah blah blah")
+        game.splash("La contaminacion acustica puede causar:", "perturbación del sueño")
         info.changeScoreBy(2)
         music.baDing.play()
     }
@@ -297,7 +299,7 @@ forever(function () {
 forever(function () {
     if (mySprite.overlapsWith(chest3)) {
         chest3.destroy(effects.ashes, 1000)
-        game.splash("historia del ghost whatever blah blah blah")
+        game.splash("La contaminacion acustica", "Afecta cientos de criaturas ")
         info.changeScoreBy(2)
         music.baDing.play()
     }
