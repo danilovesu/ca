@@ -39,6 +39,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 let projectile: Sprite = null
 let mySprite: Sprite = null
 game.splash("Contaminacion acustica")
+game.splash("colecciona los 3 cofres", "para ganar el juego")
 mySprite = sprites.create(img`
     ........................
     ........................
