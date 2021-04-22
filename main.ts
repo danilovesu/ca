@@ -5,6 +5,7 @@ namespace SpriteKind {
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonPinkDepressed, function (sprite, location) {
     game.over(true)
     effects.confetti.startScreenEffect()
+    game.splash("Ya sabes, la contaminacion acustica no es divertida", "Ayuda a la naturaliza a sanar! ")
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(img`
