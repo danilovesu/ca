@@ -1,11 +1,7 @@
 namespace SpriteKind {
     export const coin = SpriteKind.create()
+    export const chest = SpriteKind.create()
 }
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile0`, function (sprite, location) {
-    info.changeScoreBy(1)
-    music.baDing.play()
-    game.splash("historia del ghost whatever blah blah blah")
-})
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonPinkDepressed, function (sprite, location) {
     game.over(true)
     effects.confetti.startScreenEffect()
@@ -31,12 +27,14 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         `, mySprite, 50, 0)
 })
 info.onLifeZero(function () {
-    game.over(false, effects.blizzard)
+    game.over(true)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprite.destroy(effects.ashes, 500)
     otherSprite.destroy(effects.ashes, 500)
     scene.cameraShake(3, 500)
+    info.changeScoreBy(1)
+    music.wawawawaa.play()
 })
 let projectile: Sprite = null
 let mySprite: Sprite = null
@@ -104,14 +102,87 @@ let SCP4 = sprites.create(img`
     . . . . . . f . . . . f . . . . 
     . . . . . . f f . . f f . . . . 
     `, SpriteKind.Enemy)
+let SCP5 = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . f . . . f . . . f . . . . 
+    . . . . f . . f . . f . . . . . 
+    . . . f . f f f f f . f . . . . 
+    . . . . f f f 1 f f f . . . . . 
+    . . . f . f 1 f 1 f . f . . . . 
+    . . f . . f f 1 f f . . f . . . 
+    . . . . f f f f f f f . . . . . 
+    . . . f . . f . f . . f . . . . 
+    . . . . . f . . . f . . . . . . 
+    . . . . . . f . f . . . . . . . 
+    . . . . . f . . . f . . . . . . 
+    . . . . . f . . . f . . . . . . 
+    . . . . f f . . . f f . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Enemy)
+let chest1 = sprites.create(img`
+    . . b b b b b b b b b b b b . . 
+    . b e 4 4 4 4 4 4 4 4 4 4 e b . 
+    b e 4 4 4 4 4 4 4 4 4 4 4 4 e b 
+    b e 4 4 4 4 4 4 4 4 4 4 4 4 e b 
+    b e 4 4 4 4 4 4 4 4 4 4 4 4 e b 
+    b e e 4 4 4 4 4 4 4 4 4 4 e e b 
+    b e e e e e e e e e e e e e e b 
+    b e e e e e e e e e e e e e e b 
+    b b b b b b b d d b b b b b b b 
+    c b b b b b b c c b b b b b b c 
+    c c c c c c b c c b c c c c c c 
+    b e e e e e c b b c e e e e e b 
+    b e e e e e e e e e e e e e e b 
+    b c e e e e e e e e e e e e c b 
+    b b b b b b b b b b b b b b b b 
+    . b b . . . . . . . . . . b b . 
+    `, SpriteKind.chest)
 controller.moveSprite(mySprite, 100, 100)
 scp2.setPosition(67, 89)
-SCP4.setPosition(158, 116)
+SCP4.setPosition(345, 223)
+SCP5.setPosition(320, 145)
 scp2.follow(mySprite, 10)
 SCP3.setPosition(139, 93)
 SCP3.follow(mySprite, 5)
 SCP4.follow(mySprite, 5)
-scene.setBackgroundColor(0)
+SCP5.follow(mySprite, 5)
+let chest2 = sprites.create(img`
+    . . b b b b b b b b b b b b . . 
+    . b e 4 4 4 4 4 4 4 4 4 4 e b . 
+    b e 4 4 4 4 4 4 4 4 4 4 4 4 e b 
+    b e 4 4 4 4 4 4 4 4 4 4 4 4 e b 
+    b e 4 4 4 4 4 4 4 4 4 4 4 4 e b 
+    b e e 4 4 4 4 4 4 4 4 4 4 e e b 
+    b e e e e e e e e e e e e e e b 
+    b e e e e e e e e e e e e e e b 
+    b b b b b b b d d b b b b b b b 
+    c b b b b b b c c b b b b b b c 
+    c c c c c c b c c b c c c c c c 
+    b e e e e e c b b c e e e e e b 
+    b e e e e e e e e e e e e e e b 
+    b c e e e e e e e e e e e e c b 
+    b b b b b b b b b b b b b b b b 
+    . b b . . . . . . . . . . b b . 
+    `, SpriteKind.chest)
+let chest3 = sprites.create(img`
+    . . b b b b b b b b b b b b . . 
+    . b e 4 4 4 4 4 4 4 4 4 4 e b . 
+    b e 4 4 4 4 4 4 4 4 4 4 4 4 e b 
+    b e 4 4 4 4 4 4 4 4 4 4 4 4 e b 
+    b e 4 4 4 4 4 4 4 4 4 4 4 4 e b 
+    b e e 4 4 4 4 4 4 4 4 4 4 e e b 
+    b e e e e e e e e e e e e e e b 
+    b e e e e e e e e e e e e e e b 
+    b b b b b b b d d b b b b b b b 
+    c b b b b b b c c b b b b b b c 
+    c c c c c c b c c b c c c c c c 
+    b e e e e e c b b c e e e e e b 
+    b e e e e e e e e e e e e e e b 
+    b c e e e e e e e e e e e e c b 
+    b b b b b b b b b b b b b b b b 
+    . b b . . . . . . . . . . b b . 
+    `, SpriteKind.chest)
 tiles.setTilemap(tilemap`level1`)
 tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairLarge)
 scene.cameraFollowSprite(mySprite)
@@ -173,10 +244,22 @@ mySprite,
 500,
 true
 )
+tiles.placeOnRandomTile(chest1, assets.tile`myTile1`)
+tiles.placeOnRandomTile(chest2, assets.tile`myTile1`)
+tiles.placeOnRandomTile(chest3, assets.tile`myTile1`)
 forever(function () {
     if (mySprite.overlapsWith(SCP3)) {
         mySprite.say("Oh no!", 2000)
         SCP3.destroy(effects.ashes, 1000)
+        music.wawawawaa.play()
+        info.changeLifeBy(-1)
+        scene.cameraShake(8, 500)
+    }
+})
+forever(function () {
+    if (mySprite.overlapsWith(SCP4)) {
+        mySprite.say("Oh no!", 2000)
+        SCP4.destroy(effects.ashes, 1000)
         music.wawawawaa.play()
         info.changeLifeBy(-1)
         scene.cameraShake(8, 500)
@@ -192,11 +275,26 @@ forever(function () {
     }
 })
 forever(function () {
-    if (mySprite.overlapsWith(SCP4)) {
-        mySprite.say("Oh no!", 2000)
-        SCP4.destroy(effects.ashes, 1000)
-        music.wawawawaa.play()
-        info.changeLifeBy(-1)
-        scene.cameraShake(8, 500)
+    if (mySprite.overlapsWith(chest1)) {
+        chest1.destroy(effects.ashes, 1000)
+        game.splash("historia del ghost whatever blah blah blah")
+        info.changeScoreBy(2)
+        music.baDing.play()
+    }
+})
+forever(function () {
+    if (mySprite.overlapsWith(chest3)) {
+        chest3.destroy(effects.ashes, 1000)
+        game.splash("historia del ghost whatever blah blah blah")
+        info.changeScoreBy(2)
+        music.baDing.play()
+    }
+})
+forever(function () {
+    if (mySprite.overlapsWith(chest2)) {
+        chest2.destroy(effects.ashes, 1000)
+        game.splash("historia del ghost whatever blah blah blah")
+        info.changeScoreBy(2)
+        music.baDing.play()
     }
 })
