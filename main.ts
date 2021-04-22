@@ -282,7 +282,7 @@ forever(function () {
 forever(function () {
     if (mySprite.overlapsWith(chest1)) {
         chest1.destroy(effects.ashes, 1000)
-        game.splash("historia del ghost whatever blah blah blah")
+        game.splash("La contaminacion acustica ", "nos afecta a todos, flora y fauna")
         info.changeScoreBy(2)
         music.baDing.play()
     }
