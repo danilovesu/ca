@@ -38,7 +38,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 })
 let projectile: Sprite = null
 let mySprite: Sprite = null
-game.splash("dan moment")
+game.splash("Contaminacion acustica")
 mySprite = sprites.create(img`
     ........................
     ........................
@@ -68,57 +68,57 @@ mySprite = sprites.create(img`
 let scp2 = sprites.create(assets.image`myImage`, SpriteKind.Enemy)
 let SCP3 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . f f f . . . . . . . 
-    . . . . . f f 1 f f . . . . . . 
-    . . . . . f f f f f . . . . . . 
-    . . . . . f f 1 f f . . . . f . 
-    . . . . f f f f f f f . . . f . 
-    . . . f . f f 1 f f . f . f . . 
-    . . f . . f f f f f . . f . . . 
-    . . . f . . f . f . . . . . . . 
-    . . . . . f . . . f . . . . . . 
-    . . . . f . . . . . f . . . . . 
-    . . . . . f . . . f . . . . . . 
-    . . . . f f . . . f f . . . . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . 6 6 6 6 6 6 6 6 . . . . 
+    . . . 6 9 6 6 6 6 6 6 c 6 . . . 
+    . . 6 c 9 6 6 6 6 6 6 c c 6 . . 
+    . 6 c c 9 9 9 9 9 9 6 c c 9 6 d 
+    . 6 c 6 8 8 8 8 8 8 8 b c 9 6 6 
+    . 6 6 8 b b 8 b b b 8 8 b 9 6 6 
+    . 6 8 b b b 8 b b b b 8 6 6 6 6 
+    . 8 8 6 6 6 8 6 6 6 6 6 8 6 6 6 
+    . 8 8 8 8 8 8 f 8 8 8 f 8 6 d d 
+    . 8 8 8 8 8 8 f 8 8 f 8 8 8 6 d 
+    . 8 8 8 8 8 8 f f f 8 8 8 8 8 8 
+    . 8 f f f f 8 8 8 8 f f f 8 8 8 
+    . . f f f f f 8 8 f f f f f 8 . 
+    . . . f f f . . . . f f f f . . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Enemy)
 let SCP4 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
+    . . . . 2 2 2 2 2 2 2 2 . . . . 
+    . . . 2 4 2 2 2 2 2 2 c 2 . . . 
+    . . 2 c 4 2 2 2 2 2 2 c c 2 . . 
+    . 2 c c 4 4 4 4 4 4 2 c c 4 2 d 
+    . 2 c 2 e e e e e e e b c 4 2 2 
+    . 2 2 e b b e b b b e e b 4 2 2 
+    . 2 e b b b e b b b b e 2 2 2 2 
+    . e e 2 2 2 e 2 2 2 2 2 e 2 2 2 
+    . e e e e e e f e e e f e 2 d d 
+    . e e e e e e f e e f e e e 2 d 
+    . e e e e e e f f f e e e e e e 
+    . e f f f f e e e e f f f e e e 
+    . . f f f f f e e f f f f f e . 
+    . . . f f f . . . . f f f f . . 
     . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . f f f f . f f f f . . . 
-    . . . . f f 1 f f f f f f . . . 
-    . . . f f f f f 1 f f f f . . . 
-    . . . . f f f f f f f 1 f . f f 
-    . . . . f f f 1 f f 1 f f f f . 
-    f f f f f f f f 1 f f f f f . . 
-    f . . . f f 1 f f f f 1 f . f . 
-    . f . . f f f 1 f f f f f . . . 
-    . . . . f f f f f f f f f . . . 
-    . . . . f f f f f 1 f f f . . . 
-    . . . . . f f f f f f f . . . . 
-    . . . . . . f . . . . f . . . . 
-    . . . . . . f f . . f f . . . . 
     `, SpriteKind.Enemy)
 let SCP5 = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . f . . . f . . . f . . . . 
-    . . . . f . . f . . f . . . . . 
-    . . . f . f f f f f . f . . . . 
-    . . . . f f f 1 f f f . . . . . 
-    . . . f . f 1 f 1 f . f . . . . 
-    . . f . . f f 1 f f . . f . . . 
-    . . . . f f f f f f f . . . . . 
-    . . . f . . f . f . . f . . . . 
-    . . . . . f . . . f . . . . . . 
-    . . . . . . f . f . . . . . . . 
-    . . . . . f . . . f . . . . . . 
-    . . . . . f . . . f . . . . . . 
-    . . . . f f . . . f f . . . . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . . f f f f . . . . . 
+    . . . f f 5 5 5 5 f f . . . 
+    . . f 5 5 5 5 5 5 5 5 f . . 
+    . f 5 5 5 5 5 5 5 5 5 5 f . 
+    . f 5 5 5 d b b d 5 5 5 f . 
+    f 5 5 5 b 4 4 4 4 b 5 5 5 f 
+    f 5 5 c c 4 4 4 4 c c 5 5 f 
+    f b b f b f 4 4 f b f b b f 
+    f b b 4 1 f d d f 1 4 b b f 
+    . f b f d d d d d d f b f . 
+    . f e f e 4 4 4 4 e f e f . 
+    . e 4 f 6 9 9 9 9 6 f 4 e . 
+    . 4 d c 9 9 9 9 9 9 c d 4 . 
+    . 4 f b 3 b 3 b 3 b b f 4 . 
+    . . f f 3 b 3 b 3 3 f f . . 
+    . . . . f f b b f f . . . . 
     `, SpriteKind.Enemy)
 let chest1 = sprites.create(img`
     . . b b b b b b b b b b b b . . 
