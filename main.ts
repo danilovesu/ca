@@ -3,9 +3,9 @@ namespace SpriteKind {
     export const chest = SpriteKind.create()
 }
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonPinkDepressed, function (sprite, location) {
-    game.over(true)
-    effects.confetti.startScreenEffect()
     game.splash("Ya sabes, la contaminacion acustica no es divertida", "Ayuda a la naturaliza a sanar! ")
+    game.over(true, effects.hearts)
+    effects.confetti.startScreenEffect()
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(img`
